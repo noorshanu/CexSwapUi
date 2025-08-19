@@ -13,3 +13,11 @@ body {
  .css-1u9des2-indicatorSeparator{
   display: none !important;
 }
+
+
+
+
+.bg-input{
+  background: linear-gradient(90deg, #262626 0%, #1C1C1C 100%);
+
+}
