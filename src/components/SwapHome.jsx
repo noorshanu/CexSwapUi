@@ -66,21 +66,21 @@ const SwapHome = () => {
   return (
     <motion.div
       className="bg-[#111111] rounded-3xl px-6 py-8 w-full max-w-sm mx-auto mt-10 shadow-xl text-white font-sans relative h-[650px]
-       border border-white flex flex-col justify-between relative"
+       border border-white flex flex-col  "
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, type: 'spring', bounce: 0.2 }}
     >
-      <img src="/top.png" alt="bg" className=' absolute top-0 left-0 ' />
+      <img src="/top.png" alt="bg" className=' absolute top-0 left-0 z-0 ' />
       {/* Header */}
-      <div className="flex justify-between items-center mb-10">
+      <div className="flex justify-between items-center mb-2 z-10">
         <div className="font-black text-2xl tracking-widest flex items-center">
           <img src="/swap.png" alt="logo" className=" object-contain" />
         </div>
         <img src="/cat.png" alt="menu" className=" object-contain" />
       </div>
       {/* Main Content */}
-      <div className="flex flex-col gap-6 flex-1 justify-center">
+      <div className="flex flex-col gap-6 flex-1 justify-center z-10">
         {/* Spend input */}
         <div>
           <div className="text-xs text-gray-400 mb-2 ml-1">YOU SPEND</div>
