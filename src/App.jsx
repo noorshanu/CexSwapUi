@@ -1,16 +1,12 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
+import WidgetFrame from './components/WidgetFrame'
 import SwapHome from './components/SwapHome'
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/swap" element={<SwapHome />} />
-      </Routes>
-    </Router>
+    <WidgetFrame>
+      <SwapHome />
+    </WidgetFrame>
   )
 }
 

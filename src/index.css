@@ -6,3 +6,10 @@ body {
   color: #fff;
   font-family: 'Work Sans', sans-serif;
 }
+
+.custom-scrollbar::-webkit-scrollbar { width: 8px; background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #232526; border-radius: 8px; }
+
+ .css-1u9des2-indicatorSeparator{
+  display: none !important;
+}
