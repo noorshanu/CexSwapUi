@@ -95,26 +95,28 @@ const CryptoSelectModal = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="relative w-full mx-auto bg-[#18191A] rounded-t-3xl z-50 flex flex-col shadow-2xl border-t border-[#232526]"
+            className="relative w-full mx-auto bg-[#18191A] rounded-t-3xl z-50 flex  flex-col shadow-2xl border-t border-[#232526]"
             style={{ height: "80vh", maxHeight: "650px" }}
             tabIndex={-1}
           >
             {/* Drag handle */}
-            <div className="w-12 h-1.5 bg-gray-600 rounded-full mx-auto mt-3 mb-2" />
+            <div className="w-12 h-1.5 bg-gray-600 rounded-full mx-auto mt-3 mb-2 px-4" />
             {/* Sticky header/search */}
             <div className="sticky top-0 z-10 bg-[#18191A] pt-2 pb-2">
-              <button
-                className="absolute left-4 top-6 text-2xl text-white"
+           <div className="flex items-center gap-10  px-4 mb-4">
+           <button
+                className=" text-2xl text-white"
                 onClick={onClose}
                 aria-label="Close selector"
               >
                 &larr;
               </button>
-              <div className="text-center text-2xl font-semibold mb-4 mt-2 text-white">
+              <div className="text-center text-2xl font-semibold  text-white px-4">
                 Select Currency
               </div>
+           </div>
               <input
-                className="w-full bg-[#232526] rounded-xl px-4 py-3 mb-2 text-white placeholder-gray-400 outline-none"
+                className="w-[330px] bg-input rounded-xl px-4 py-3 mb-2 text-white placeholder-gray-400 outline-none mx-4 mb-4"
                 placeholder="Search"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -122,9 +124,9 @@ const CryptoSelectModal = ({
               />
             </div>
             {/* Scrollable list area */}
-            <div className="overflow-y-auto flex-1 px-1 pb-4 custom-scrollbar">
+            <div className="overflow-y-auto flex-1 px-3 mx-2 pb-4 custom-scrollbar">
               <div>
-                <div className="text-xs text-gray-400 mb-2 font-semibold">
+                <div className="text-xs text-gray-400 mb-2 font-medium">
                   POPULAR CURRENCIES
                 </div>
                 {filteredPopular.length === 0 && (
@@ -141,34 +143,34 @@ const CryptoSelectModal = ({
                       onClose();
                     }}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 px-3">
                       <img
                         src={c.icon}
                         alt={c.symbol}
-                        className="w-9 h-9 rounded-full bg-white"
+                        className="w-8 h-8 rounded-full bg-white"
                       />
-                      <div className="flex flex-col items-start">
-                        <span className="text-base text-white font-medium">
+                      <div className="flex flex-col items-start gap-1">
+                        <span className="text-sm text-white font-medium">
                           {c.label}
                         </span>
-                        <span className="text-xs text-gray-400">
+                        <span className="text-[10px] text-gray-400">
                           {c.symbol.toUpperCase()}
                         </span>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-base text-gray-300 font-semibold">
+                      <span className="text-sm text-gray-300 font-semibold">
                         {c.symbol.toUpperCase()}
                       </span>
                       {selected?.value === c.value && (
-                        <FaCheck className="text-green-400 text-lg" />
+                        <FaCheck className="text-green-400 text-sm" />
                       )}
                     </div>
                   </button>
                 ))}
               </div>
-              <div className="mt-4">
-                <div className="text-xs text-gray-400 mb-2 font-semibold">
+              <div className="mt-4 px-3">
+                <div className="text-xs text-gray-400 mb-2 font-medium">
                   ALL CURRENCIES
                 </div>
                 {filteredAll.length === 0 && (
@@ -189,23 +191,23 @@ const CryptoSelectModal = ({
                       <img
                         src={c.icon}
                         alt={c.symbol}
-                        className="w-9 h-9 rounded-full bg-white"
+                        className="w-8 h-8 rounded-full bg-white"
                       />
                       <div className="flex flex-col items-start">
-                        <span className="text-base text-white font-medium">
+                        <span className="text-sm text-white font-medium">
                           {c.label}
                         </span>
-                        <span className="text-xs text-gray-400">
+                        <span className="text-[10px] text-gray-400">
                           {c.symbol.toUpperCase()}
                         </span>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-base text-gray-300 font-semibold">
+                      <span className="text-sm text-gray-300 font-semibold">
                         {c.symbol.toUpperCase()}
                       </span>
                       {selected?.value === c.value && (
-                        <FaCheck className="text-green-400 text-lg" />
+                        <FaCheck className="text-green-400 text-sm" />
                       )}
                     </div>
                   </button>
@@ -289,18 +291,20 @@ const CurrencySelectModal = ({ open, onClose, onSelect, selected }) => {
             <div className="w-12 h-1.5 bg-gray-600 rounded-full mx-auto mt-3 mb-2" />
             {/* Sticky header/search */}
             <div className="sticky top-0 z-10 bg-[#18191A] pt-2 pb-2">
-              <button
-                className="absolute left-4 top-6 text-2xl text-white"
+       <div className="flex items-center gap-10  px-4 mb-4">
+       <button
+                className=" text-2xl text-white"
                 onClick={onClose}
                 aria-label="Close selector"
               >
                 &larr;
               </button>
-              <div className="text-center text-2xl font-semibold mb-4 mt-2 text-white">
+                <div className="text-center text-2xl font-semibold  text-white px-4">
                 Select Currency
               </div>
+       </div>
               <input
-                className="w-full bg-[#232526] rounded-xl px-4 py-3 mb-2 text-white placeholder-gray-400 outline-none"
+                className="w-[330px] bg-input rounded-xl px-4 py-3 mb-2 text-white placeholder-gray-400 outline-none mx-4 mb-4"
                 placeholder="Search"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -308,9 +312,9 @@ const CurrencySelectModal = ({ open, onClose, onSelect, selected }) => {
               />
             </div>
             {/* Scrollable list area */}
-            <div className="overflow-y-auto flex-1 px-1 pb-4 custom-scrollbar">
+            <div className="overflow-y-auto flex-1 px-3 pb-4 custom-scrollbar">
               <div>
-                <div className="text-xs text-gray-400 mb-2 font-semibold">
+                  <div className="text-xs text-gray-400 mb-2 font-medium">
                   POPULAR CURRENCIES
                 </div>
                 {filteredPopular.length === 0 && (
@@ -327,34 +331,34 @@ const CurrencySelectModal = ({ open, onClose, onSelect, selected }) => {
                       onClose();
                     }}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 px-3">
                       <img
                         src={c.flag}
                         alt={c.code}
-                        className="w-6 h-6 rounded-sm"
+                        className="w-8 h-8 rounded-full bg-white"
                       />
-                      <div className="flex flex-col items-start">
-                        <span className="text-base text-white font-medium">
+                      <div className="flex flex-col items-start gap-1">
+                        <span className="text-sm text-white font-medium">
                           {c.name}
                         </span>
-                        <span className="text-xs text-gray-400">
+                        <span className="text-[10px] text-gray-400">
                           {c.countryCode}
                         </span>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-base text-gray-300 font-semibold">
+                      <span className="text-sm text-gray-300 font-semibold">
                         {c.code}
                       </span>
                       {selected?.code === c.code && (
-                        <FaCheck className="text-green-400 text-lg" />
+                        <FaCheck className="text-green-400 text-sm" />
                       )}
                     </div>
                   </button>
                 ))}
               </div>
-              <div className="mt-4">
-                <div className="text-xs text-gray-400 mb-2 font-semibold">
+              <div className="mt-4 ">
+                <div className="text-xs text-gray-400 mb-2 font-medium">
                   ALL CURRENCIES
                 </div>
                 {filteredAll.length === 0 && (
@@ -371,27 +375,27 @@ const CurrencySelectModal = ({ open, onClose, onSelect, selected }) => {
                       onClose();
                     }}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 px-3">
                       <img
                         src={c.flag}
                         alt={c.code}
-                        className="w-6 h-6 rounded-sm"
+                        className="w-8 h-8 rounded-full bg-white"
                       />
-                      <div className="flex flex-col items-start">
-                        <span className="text-base text-white font-medium">
+                      <div className="flex flex-col items-start gap-1">
+                        <span className="text-sm text-white font-medium">
                           {c.name}
                         </span>
-                        <span className="text-xs text-gray-400">
+                        <span className="text-[10px] text-gray-400">
                           {c.countryCode}
                         </span>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-base text-gray-300 font-semibold">
+                      <span className="text-sm text-gray-300 font-semibold">
                         {c.code}
                       </span>
                       {selected?.code === c.code && (
-                        <FaCheck className="text-green-400 text-lg" />
+                          <FaCheck className="text-green-400 text-sm" />
                       )}
                     </div>
                   </button>
@@ -688,16 +692,18 @@ const SwapHome = () => {
   if (screen === "select-quote") {
     return (
       <div className="w-full h-full flex flex-col relative px-4 pt-4 pb-8">
-        <button
-          className="absolute left-4 top-4 text-2xl text-white"
+   <div className="flex items-center gap-10  px-4 mb-4">
+   <button
+          className=" text-2xl text-white"
           onClick={() => setScreen("swap")}
         >
           &larr;
         </button>
-        <div className="text-center text-2xl font-semibold mb-6 text-white">
+        <div className="text-center text-2xl font-semibold  text-white px-4">
           Select Quote
         </div>
-        <div className="text-lg font-semibold text-white mb-2">
+   </div>
+        <div className="text-lg font-semibold text-white mb-4 px-4  mt-4 ">
           Best Quote{" "}
           <span className="float-right text-xs font-normal text-gray-400 flex items-center gap-1">
             00:25{" "}
@@ -705,8 +711,8 @@ const SwapHome = () => {
           </span>
         </div>
         <div
-          className={`border-2 rounded-2xl p-5 mb-6 ${
-            selectedQuote === 0 ? "border-teal-600" : "border-[#232526]"
+          className={`border-2 rounded-2xl p-5 mb-6 px-4 bg-[#373737]  ${
+            selectedQuote === 0 ? "border-[#106A6A]" : "border-[#232526]"
           }`}
           onClick={() => setSelectedQuote(0)}
           style={{ cursor: "pointer" }}
@@ -788,7 +794,9 @@ const SwapHome = () => {
       <div className="flex flex-col gap-6 flex-1 justify-center z-10">
         {/* Spend input */}
         <div>
-          <div className="text-xs text-gray-400 font-medium mb-2 ml-1">YOU SPEND</div>
+          <div className="text-xs text-gray-400 font-medium mb-2 ml-1">
+            YOU SPEND
+          </div>
           <div className="flex items-center justify-between bg-input rounded-xl px-3 py-4">
             <input
               type="number"
