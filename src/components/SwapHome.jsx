@@ -714,7 +714,7 @@ const SwapHome = () => {
         </div>
         <div
           className={`border-2 rounded-2xl p-5 mb-6 px-4 bg-[#373737]  ${
-            selectedQuote === 0 ? "border-[#106A6A]" : "border-[#232526]"
+            selectedQuote === 0 ? "border-[#106A6A]" : "border-[#106A6A]"
           }`}
           onClick={() => setSelectedQuote(0)}
           style={{ cursor: "pointer" }}
