@@ -593,52 +593,54 @@ const SwapHome = () => {
   // Confirm page
   if (screen === "confirm") {
     return (
-      <div className="w-full h-full flex flex-col relative px-4 pt-4 pb-8">
-        <button
-          className="absolute left-4 top-4 text-2xl text-white"
+      <div className="w-full h-full flex flex-col relative px-3 pt-4 pb-6">
+     <div className="flex items-center gap-8  px-4 mb-12">
+     <button
+          className=" text-2xl text-white"
           onClick={() => setScreen("select-quote")}
         >
           &larr;
         </button>
-        <div className="text-center text-2xl font-semibold mb-6 text-white">
+        <div className="text-center text-xl font-semibold  text-white px-4">
           Confirm And Proceed
         </div>
-        <div className="mb-6">
-          <div className="text-xs text-gray-400 mb-2">YOU SPEND</div>
-          <div className="flex items-center bg-[#232526] rounded-xl px-5 py-4 mb-4">
-            <span className="text-3xl font-semibold text-white flex-1">
+     </div>
+        <div className="mb-4 px-3">
+          <div className="text-xs text-gray-400 mb-2 font-medium">YOU SPEND</div>
+          <div className="flex items-center bg-input rounded-xl px-5 py-4 mb-4 mx-2">
+            <span className="text-2xl font-semibold text-white flex-1">
               {amount}
             </span>
             <div className="flex items-center gap-2">
               <img
                 src={selectedCurrency.flag}
                 alt={selectedCurrency.code}
-                className="w-6 h-6 rounded-sm"
+                className="w-4 h-4 rounded-full"
               />
-              <span className="text-base font-medium">
+              <span className="text-sm font-medium">
                 {selectedCurrency.code}
               </span>
             </div>
           </div>
           <div className="text-xs text-gray-400 mb-2">YOU GET</div>
-          <div className="flex items-center bg-[#232526] rounded-xl px-5 py-4 mb-4">
-            <span className="text-3xl font-semibold text-white flex-1">
+          <div className="flex items-center bg-input rounded-xl px-5 py-4 mb-4 mx-2">
+            <span className="text-2xl font-semibold text-white flex-1">
               {bestQuote.amount}
             </span>
             <div className="flex items-center gap-2">
               <img
                 src={selectedCrypto?.icon}
                 alt={selectedCrypto?.symbol}
-                className="w-6 h-6 rounded-full bg-white"
+                className="w-4 h-4 rounded-full "
               />
-              <span className="text-base font-medium">
+              <span className="text-sm font-medium">
                 {selectedCrypto?.symbol?.toUpperCase()}
               </span>
             </div>
           </div>
         </div>
-        <div className="bg-[#232526] rounded-2xl p-5 mb-6">
-          <div className="flex items-center justify-between text-gray-400 text-sm mb-2">
+        <div className="bg-input rounded-2xl p-5 mb-6 mx-2  mt-4">
+          <div className="flex items-center justify-between text-gray-400 text-xs mb-2 font-medium">
             <span>
               1 {bestQuote.currency} = {bestQuote.rate} {bestQuote.forCurrency}
             </span>
@@ -647,25 +649,25 @@ const SwapHome = () => {
               <span className="inline-block w-4 h-4 border-2 border-gray-400 border-t-transparent rounded-full animate-spin align-middle"></span>
             </span>
           </div>
-          <div className="text-white text-base mb-2">
+          <div className="text-gray-400 text-sm mb-2 font-medium">
             You get{" "}
-            <span className="font-bold">
+            <span className="font-medium text-white">
               {bestQuote.amount} {bestQuote.currency}
             </span>{" "}
             for{" "}
-            <span className="font-bold">
+            <span className="font-medium text-white">
               {bestQuote.forAmount} {bestQuote.forCurrency}
             </span>
           </div>
-          <div className="flex justify-between text-gray-400 text-sm mb-1">
+          <div className="flex justify-between text-gray-400 text-xs mb-1 font-medium">
             <span>Service fee</span>
-            <span>15.242969 ETH</span>
+            <span className="text-white font-medium">15.242969 ETH</span>
           </div>
-          <div className="flex justify-between text-gray-400 text-sm mb-1">
+          <div className="flex justify-between text-gray-400 text-xs mb-1 font-medium">
             <span>Network fee</span>
-            <span>1.437631 ETH</span>
+            <span className="text-white font-medium">1.437631 ETH</span>
           </div>
-          <div className="flex justify-between text-gray-400 text-sm">
+          <div className="flex justify-between text-gray-400 text-xs font-medium">
             <span>
               Including the fees{" "}
               <span
@@ -675,11 +677,11 @@ const SwapHome = () => {
                 &#9432;
               </span>
             </span>
-            <span>16.6806601 ETH</span>
+            <span className="text-white font-medium">16.6806601 ETH</span>
           </div>
         </div>
         <button
-          className="w-full bg-teal-700 hover:bg-teal-800 transition-colors text-white rounded-xl py-4 text-lg font-semibold mt-8"
+          className="w-full bg-[#106A6A] hover:bg-teal-800 transition-colors text-white rounded-xl py-4 text-lg font-semibold mt-8"
           onClick={handleConfirm}
         >
           Confirm
@@ -703,7 +705,7 @@ const SwapHome = () => {
           Select Quote
         </div>
    </div>
-        <div className="text-lg font-semibold text-white mb-4 px-4  mt-4 ">
+        <div className="text-lg font-semibold text-white mb-4 px-4  mt-4 flex items-center justify-between">
           Best Quote{" "}
           <span className="float-right text-xs font-normal text-gray-400 flex items-center gap-1">
             00:25{" "}
@@ -717,49 +719,48 @@ const SwapHome = () => {
           onClick={() => setSelectedQuote(0)}
           style={{ cursor: "pointer" }}
         >
-          <div className="text-gray-400 mb-1">{bestQuote.provider}</div>
-          <div className="text-white text-lg font-bold mb-1">
+          <div className="text-gray-400 text-xs mb-1">{bestQuote.provider}</div>
+          <div className="text-gray-400 text-base font-medium mb-1">
             Get{" "}
-            <span className="font-extrabold">
+            <span className="font-bold text-white">
               {bestQuote.amount} {bestQuote.currency}
             </span>{" "}
             for{" "}
-            <span className="font-extrabold">
+            <span className="font-bold text-white">
               {bestQuote.forAmount} {bestQuote.forCurrency}
             </span>
           </div>
-          <div className="text-gray-400 text-sm">
+          <div className="text-gray-400 text-xs">
             1 {bestQuote.currency} = {bestQuote.rate} {bestQuote.forCurrency}
           </div>
         </div>
-        <div className="text-gray-400 text-base mb-2 mt-2">others</div>
+        <div className="text-gray-400 text-sm mb-2 mt-2 px-4">others</div>
         <div className="flex-1 overflow-y-auto">
           {otherQuotes.map((q, i) => (
             <div
               key={i}
-              className="flex items-center justify-between border-b border-[#232526] py-3 cursor-pointer"
+              className="flex items-center justify-between border-b border-t border-[#232526] py-3 cursor-pointer px-4"
               onClick={() => setSelectedQuote(i + 1)}
             >
               <div>
-                <span className="text-white font-bold">
-                  Get {q.amount} {q.currency}
+                <span className="text-gray-400 font-medium text-xs">
+                  Get <span className="text-white font-medium text-xs">{q.amount} {q.currency}</span> for{" "}
                 </span>{" "}
-                for{" "}
-                <span className="font-bold text-white">
+                <span className="font-medium text-white text-xs">
                   {q.forAmount} {q.forCurrency}
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-gray-400 text-sm">{q.provider}</span>
+              <div className="flex items-center gap-6">
+                <span className="text-gray-400 text-xs font-medium">{q.provider}</span>
                 <span
-                  className={`w-5 h-5 border-2 rounded-full flex items-center justify-center ${
+                  className={`w-3 h-3 border-2 rounded-full flex items-center justify-center ${
                     selectedQuote === i + 1
-                      ? "border-teal-600"
+                      ? "border-[#106A6A]"
                       : "border-[#232526]"
                   }`}
                 >
                   {selectedQuote === i + 1 && (
-                    <span className="w-3 h-3 bg-teal-600 rounded-full block"></span>
+                      <span className="w-3 h-3 bg-[#106A6A] rounded-full block"></span>
                   )}
                 </span>
               </div>
